@@ -1,0 +1,77 @@
+{
+  "name": "ticket_tool",
+  "version": "1.0.0",
+  "size": {
+    "width": 3,
+    "height": 4
+  },
+  "mapping": [],
+  "workflowMapping": [
+    {
+      "alias": "send_email",
+      "modelId": null,
+      "version": null,
+      "parameters": [
+        {
+          "name": "to",
+          "aliasedName": "to",
+          "type": "text",
+          "list": false,
+          "children": []
+        },
+        {
+          "name": "subject",
+          "aliasedName": "subject",
+          "type": "text",
+          "list": false,
+          "children": []
+        },
+        {
+          "name": "body",
+          "aliasedName": "body",
+          "type": "text",
+          "list": false,
+          "children": []
+        }
+      ]
+    }
+  ],
+
+  "collections": [
+    {
+      "name": "ticket_tool",
+      "schema": {
+        "columns": [
+          { "name": "category_Role", "type": "STRING" },
+          { "name": "Requester", "type": "STRING" },
+          { "name": "Subject", "type": "STRING" },
+          { "name": " Description", "type": "STRING" },
+          { "name": "category_Role_2", "type": "STRING" },
+          { "name": "Team_people", "type": "STRING" }
+        ]
+      },
+      "syncEnabled": true
+    },
+    {
+      "name": "ticket_tool"
+    },
+
+    {
+      "name": "ticket_team",
+      "schema": {
+        "columns": [
+          { "name": "category_Role_2", "type": "STRING" },
+          { "name": "Team_people", "type": "STRING" }
+        ]
+      },
+      "syncEnabled": true
+    },
+    {
+      "name": "ticket_team"
+    }
+  ],
+
+  "fileName": "manifest.json",
+  "id": "471721de-bc38-4d2d-ba22-3e1b749968bd",
+  "proxyId": "19c0cdaf-2eaa-4fbd-98ca-7b7aad031823"
+}

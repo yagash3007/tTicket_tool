@@ -1,0 +1,72 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="app.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+
+
+    <div class="container">
+      <h1>Support Ticket Platform</h1>
+      <nav id="nav">
+        <ul>
+          <li><a href="#">Tickets</a></li>
+          <li><a id="team">Manage team</a></li>
+          <li><a href="./manage_ticket.html">Manage ticket</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section id="#ticket">
+    <div class="container">
+      <h2>Welcome Back <span id="name"> </span>👋</h2>
+      <p>Submit a ticket below:</p>
+      <form method="POST">
+        <label for="category">Category:</label>
+       
+        <select id="category" name="category">  
+
+        </select>
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
+        <button type="submit" onclick="sub()">Submit</button>
+      </form>
+    </div>
+  </section>
+  <script src="https://unpkg.com/ryuu.js"></script>
+  <script src="app.js"></script>
+  <script>
+
+
+
+    const myiid = domo.env;
+    const hrefValue = `./manage_team.html?${myiid.userId}`;
+
+    document.getElementById('team').setAttribute('href', hrefValue);
+
+
+    console.log(myiid.userId)
+
+
+    domo.get(`/domo/users/v1/${myiid.userId}?includeDetails=true`).then(function (data) {
+      console.log("myinfo", data)
+      console.log(data.displayName);
+      document.getElementById('name').textContent = data.displayName
+      // document.getElementById('name').textContent=data.displayName
+    })
+
+
+
+  
+  </script>
+</body>
+
+</html>

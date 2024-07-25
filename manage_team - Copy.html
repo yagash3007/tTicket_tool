@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="app.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+     
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+
+    <header>
+        <a href="./index.html" class="back-link"><span class="material-symbols-outlined">
+                arrow_back
+            </span></a>
+
+        <div class="container">
+            <!-- Example link to index.html -->
+            <h1>Manage team</h1>
+        </div>
+    </header>
+    <section id="manage_team" name="category[]">
+        <div class="container">
+            <h2>Welcome Back <span id="name"> </span>👋</h2>
+            <div class="container">
+
+                <ul class="responsive-table">
+                    <li class="table-header">
+                        <div class="col col-1">Id</div>
+                        <div class="col col-2">Team name</div>
+                        <div class="col col-3"></div>
+                        <div class="col col-3">Team member</div>
+                        <div class="col col-3"></div>
+
+                    <a href="creat_team.html" class="button-link">Create Team</a>
+
+                </ul>
+
+            </div>
+
+            <section id="editForm" style="display: none; z-index: 100; position:fixed; top: 20%; left: 20%;">
+                <div class="container">
+                    <div class="top-right">
+                        <a href="/manage_team.html">
+                            <span class="material-symbols-outlined">cancel</span>
+                        </a>
+                    </div>
+                    
+
+                   
+                    <h2>Update the form</h2>
+                   
+                    <form id="edit" method="POST">
+                        <label for="category">Department name:</label>
+                        <input type="hidden" id="id" value="">
+                        <select id="category_2" name="dept">
+                            <option>HR</option>
+                            <option>IT</option>
+                            <option>Admin</option>
+                        </select>
+                        <label>Select Team:</label>
+                        <select id="category_1" name="team">
+                            <option></option>
+
+                        </select>
+
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </section>
+
+        </div>
+    </section>
+    <script src="https://unpkg.com/ryuu.js"></script>
+    <script src="manage.js"></script>
+</body>
+
+</html>

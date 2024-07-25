@@ -1,0 +1,356 @@
+/* Reset and basic styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(to bottom, #ffffff, #f2f2f2); /* Gradient from white to light gray */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+#nav{
+  margin-top: 20;
+
+}
+
+header {
+  background-color: #16664c; /* Green background */
+  color: #fff;
+  padding: 10px 0;
+  text-align: center; /* Center align text */
+}
+
+header h1 {
+  font-size: 24px;
+  margin: 0;
+}
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  margin-left: -98%;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  background-color: white;
+  border-radius: 50%;
+}
+
+/* //create bitton link */
+
+.button-wrapper {
+  display: inline-block; /* Display as inline block to wrap content */
+  margin: 10px; /* Optional: Adjust margin as needed */
+}
+
+.button-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #d7f4e4;
+  color: #0f0101;
+  text-decoration: none;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+  /* Positioning */
+  position: absolute;
+  top: 10px; /* Adjust the top position as needed */
+  right: 10px; /* Adjust the right position as needed */
+}
+
+
+
+.button-link:hover {
+  background-color: #555; /* Darker background color on hover */
+}
+
+
+
+/* Reset default list styles */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Style for each list item */
+nav ul li {
+  display: inline-block;
+  margin-left: 20px; /* Adjusted margin for better spacing */
+}
+
+/* Link styles */
+nav ul li a {
+  color: #555; /* Text color */
+  text-decoration: none;
+  padding: 10px 15px; /* Increased padding for better clickability */
+  transition: background-color 0.3s ease;
+  border-radius: 8px; /* Rounded corners */
+  background-color: #fff; /* White background */
+  border: 1px solid #ccc; /* Light border for separation */
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Hover style */
+nav ul li a:hover {
+  background-color: #eee; /* Light grey background on hover */
+}
+
+/* Active style */
+nav ul li a.active {
+  background-color: #555; /* Darker background for active state */
+  color: #fff; /* White text color for active state */
+}
+
+
+section {
+  background-color: #fff; /* White background */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Add spacing between sections */
+}
+
+section h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  text-align: center; /* Center align heading */
+}
+
+/* Form container */
+form {
+  padding: 20px;
+  background-color: #d7f4e4; /* Light grey background */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  max-width: 600px; /* Limit form width for readability */
+  margin: 0 auto; /* Center align horizontally */
+}
+
+/* Label styling */
+form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px; /* Increased margin for spacing */
+  color: #333; /* Darker text color for labels */
+}
+
+/* Input, select, textarea styling */
+form select,
+form input[type="text"],
+form textarea {
+  width: 100%; /* Full width input fields */
+  padding: 10px;
+  margin-bottom: 15px; /* Increased margin for spacing */
+  border: 1px solid #ccc; /* Light grey border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 16px;
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+/* Submit button styling */
+form input[type="submit"] {
+  background-color: #555; /* Dark background color */
+  color: #fff; /* White text color */
+  padding: 12px 20px; /* Padding for button */
+  border: none;
+  border-radius: 4px; /* Rounded corners */
+  font-size: 16px;
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease;
+}
+
+/* Submit button hover effect */
+form input[type="submit"]:hover {
+  background-color: #333; /* Darker background color on hover */
+}
+
+
+/* Submit button styling */
+form input[type="submit"] {
+  background-color: #555; /* Dark background color */
+  color: #fff; /* White text color */
+  padding: 12px 20px; /* Padding for button */
+  border: none;
+  border-radius: 4px; /* Rounded corners */
+  font-size: 16px;
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease;
+}
+
+/* Submit button hover effect */
+form input[type="submit"]:hover {
+  background-color: #333; /* Darker background color on hover */
+}
+
+form button {
+  background-color:  #16664c; /* Green button */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  display: block; /* Ensure button takes full width of form */
+  margin: 0 auto; /* Center align the button */
+}
+
+
+
+/* table */
+
+body {
+  font-family: 'Lato', sans-serif; /* Corrected font-family name */
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto; /* Simplified margin for centering */
+  padding: 0 10px; /* Adjusted padding for container */
+}
+
+h2 {
+  font-size: 26px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+h2 small {
+  font-size: 0.5em; /* Corrected nested small tag */
+}
+
+.responsive-table {
+  margin-top: 20px; /* Added margin for spacing */
+}
+
+.responsive-table li {
+  list-style-type: none; /* Removed list-style-type */
+  border-radius: 3px;
+  padding: 15px 20px; /* Reduced padding for better spacing */
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center align items vertically */
+  background-color: #ffffff;
+  box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+  margin-bottom: 20px; /* Adjusted margin for spacing between rows */
+}
+
+.responsive-table .table-header {
+  display: flex; /* Ensured table header is flex container */
+  background-color:#81d4b0;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-radius: 3px;
+  padding: 15px 20px; /* Adjusted padding for header */
+  justify-content: space-between;
+  align-items: center; /* Center align items vertically */
+}
+
+.responsive-table .table-row {
+  display: flex; /* Ensured table rows are flex containers */
+  justify-content: space-between;
+  align-items: center; /* Center align items vertically */
+}
+
+.responsive-table .col-1 {
+  flex-basis: 10%;
+}
+
+.responsive-table .col-2 {
+  flex-basis: 40%;
+}
+
+.responsive-table .col-3 {
+  flex-basis: 25%;
+}
+
+.responsive-table .col-4 {
+  flex-basis: 25%;
+}
+
+@media all and (max-width: 767px) {
+  .responsive-table .table-header {
+    display: none; /* Hide table header on smaller screens */
+  }
+
+  .responsive-table .table-row {
+    flex-direction: column; /* Stack columns vertically */
+    padding: 15px 20px; /* Adjusted padding for each row */
+  }
+
+  .responsive-table li {
+    margin-bottom: 15px; /* Reduced margin between rows */
+    padding: 15px 0; /* Adjusted padding for each row */
+  }
+
+  .responsive-table .col-1,
+  .responsive-table .col-2,
+  .responsive-table .col-3,
+  .responsive-table .col-4 {
+    flex-basis: 100%; /* Full width for columns on smaller screens */
+    margin-bottom: 10px; /* Added margin between columns */
+  }
+
+  .responsive-table .col-1::before,
+  .responsive-table .col-2::before,
+  .responsive-table .col-3::before,
+  .responsive-table .col-4::before {
+    color: #4cbb8e;
+    padding-right: 10px;
+    content: attr(data-label);
+    flex-basis: 50%;
+    text-align: right;
+  }
+}
+
+
+/* //style fro edit and delite */
+
+.edit-button, .delete-button {
+  padding: 5px 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.edit-button {
+  background-color: #16664c;
+  color: #fff;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+
+
+.top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px; /* Adjust as needed for spacing */
+}
+
+

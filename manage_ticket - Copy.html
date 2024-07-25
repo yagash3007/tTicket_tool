@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="app.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .table-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+  background-color:#81d4b0;
+  
+            color: #333;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+    <header>
+        <a href="./index.html" class="back-link"><span class="material-symbols-outlined">
+                arrow_back
+            </span></a>
+        <div class="container">
+            <h1>Manage ticket</h1>
+
+        </div>
+    </header>
+
+    <br>
+    <div class="table-container">
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Sno</th>
+
+                    <th>Category Role</th>
+                    <th>Subject</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+
+
+            </tbody>
+            
+        </table>
+    </div>
+
+
+
+    <script src="https://unpkg.com/ryuu.js"></script>
+    <script>
+        let string_id = window.location.search
+        console.log(window.location)
+        let id = string_id.substring(1)
+        console.log(id)
+
+
+        domo.get(`/domo/users/v1/${id}?includeDetails=true`).then(function (data) {
+            console.log("myinfo", data)
+            console.log(data.displayName);
+            document.getElementById('name').textContent = data.displayName
+            // document.getElementById('name').textContent=data.displayName
+        })
+
+//manage ticket
+
+        fetch('/domo/datastores/v1/collections/ticket_tool/documents/')
+            .then(response => response.json())
+            .then(data => {
+                let i=1;
+                // Assuming 'data' is an array of objects, each representing a row
+                let datas = data.content
+                console.log(datas);
+                
+                data.forEach(rowData => {
+                    // Construct table row HTML
+                    console.log(rowData.content.category_Role.category);
+                    // console.log(rowData.content.Subject.category);
+                    // console.log(rowData.content.Description.category);
+                    
+                    const newRow = `
+      <tr>
+         <td>${i}</td>
+        <td>${rowData.content.category_Role.category}</td>
+       
+        <td>${rowData.content.Subject.subject}</td>
+        <td>${rowData.content.Description.description}</td>
+        <td>
+            <button class="edit-button" onclick="">Edit</button>
+                            <button class="delete-button" onclick="handledelete('${rowData.id}')">Delete</button>
+                            </td>
+        
+      </tr>
+    `;
+
+                    // Append row to the table
+                    const tableBody = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
+                    tableBody.insertAdjacentHTML('beforeend', newRow);
+
+                   i++;
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+
+
+
+          
+
+
+
+
+    </script>
+
+
+
+<script src="ticket.js"></script>
+
+</body>
+
+</html>
